@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Its Tip's Time</title>
+    </head>
+ 
+<body>
+
+<h2>Jayanth Maturu shows tip amounts</h2>
+
+<form>
+    <label for="tip_base">Enter base amount</label>
+    <input type ="number" id="tip_base" name="tip_base" value=50> <br>
+
+    <label for="tip_percent">Enter the tip percent</label>
+    <input type ="number" id="tip_percent" name="tip_percent" value=15> <br>
+
+    <input type="button" onclick="tips()" value="Show tip">
+</form>
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function tips (){
+    let myOutput="";
+    base = document.getElementById("tip_base").value;
+    tip = document.getElementById("tip_percent").value;
+    for(i=0;i<5;i++)
+    {
+        myOutput=myOutput+tip+"%"+" is "+base*tip/100+"; ";
+        tip=Number(tip)+Number(4);
+    }
+    document.getElementById("result").innerHTML = "Tip are:"+ myOutput ;
+}
+</script>
+
+</body>
+</html> 
