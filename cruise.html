@@ -19,6 +19,17 @@
     </div>
     <input type="button" onclick="selectCruise()" value="Select a cruise">
 </form>
+<br>
+    <form>
+        <label for="days">Enter the number of days</label>
+        <input type="text" id="days" value="days"> <br>
+
+        <label for="price">Enter price</label>
+        <input type="text" id="price"> <br>
+
+        <input type="button" onclick="updateCruise()" value="Update the cruise">
+    </form>
+
 <p id="result">This text will be replaced </p>
 <script>
     let my_cruise={};
@@ -33,6 +44,14 @@
         my_cruise["Pass"] = Pass;
         out.innerHTML =
             "Shares Cabin: " + my_cruise.Cabin + "<br> Breakfast: " + my_cruise.Breakfast + "<br>Pool Pass: " + my_cruise.Pass;
+    }
+    function updateCruise(){
+        days = document.getElementById("days").value;
+        price = document.getElementById("price").value;
+        my_cruise["days"] = days;
+        my_cruise["price"] = price;
+        out.innerHTML =
+            "days: " + my_cruise.days + "<br> price: " + my_cruise.price ;
     }
 </script>
 </body>
