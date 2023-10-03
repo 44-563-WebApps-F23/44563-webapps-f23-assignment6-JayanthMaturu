@@ -3,7 +3,6 @@
     <head>
         <title>Its Tip's Time</title>
     </head>
- 
 <body>
 
 <h2>Jayanth Maturu shows tip amounts</h2>
@@ -21,7 +20,6 @@
 <p id="result">This text will be replaced </p>
 
 <script> 
-
 function tips (){
     let myOutput="";
     base = document.getElementById("tip_base").value;
@@ -34,6 +32,39 @@ function tips (){
     document.getElementById("result").innerHTML = "Tip are:"+ myOutput ;
 }
 </script>
-
+<h2> Calculations </h2>
+<form>
+    <input type="radio" id="sum" name="color" value="sum" onclick="chooseOp()">
+    <label for="sum">sum</label></br>
+  
+    <input type="radio" id="diff" name="color" value="difference" onclick="chooseOp()">
+    <label for="diff">diff</label></br>
+  
+    <input type="radio" id="mult" name="color" value="product" onclick="chooseOp()">
+    <label for="mult">mult</label></br>
+</form>
+<p id="result_radio">This text will be replaced </p>
+<script> 
+    function chooseOp (){
+        base = document.getElementById("tip_base").value;
+        tip = document.getElementById("tip_percent").value;
+        out = document.getElementById("result_radio");
+        sum=document.getElementById("sum").checked;
+        diff=document.getElementById("diff").checked;
+        mult=document.getElementById("mult").checked;
+        var z=0;
+        if(sum){
+            z=Number(base)+Number(tip);
+            out.innerHTML ="Sum of "+base+" and "+tip+" is "+ z;
+        }
+        else if(diff){
+            z=Number(base)-Number(tip);
+            out.innerHTML ="Difference of "+base+" and "+tip+" is "+z;
+        }
+        else if(mult){
+            out.innerHTML="Product of "+base+" and "+tip+" is "+base*tip;
+        }
+    }
+</script>
 </body>
 </html> 
