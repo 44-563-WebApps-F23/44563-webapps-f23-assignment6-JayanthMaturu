@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cruise_trip</title>
+    </head>
+<body>
+
+<h2>Jayanth Maturu goes on a cruise.</h2>
+<form>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="Cabin" value="True">
+        <label class="form-check-label" for="Cabin">Shares Cabin</label></br>
+
+        <input class="form-check-input" type="checkbox" id="Breakfast" value="True">
+        <label class="form-check-label" for="Breakfast">Breakfast</label></br>
+
+        <input class="form-check-input" type="checkbox" id="Pass" value="False">
+        <label class="form-check-label" for="Pass">Pool Pass</label></br>
+    </div>
+    <input type="button" onclick="selectCruise()" value="Select a cruise">
+</form>
+<p id="result">This text will be replaced </p>
+<script>
+    let my_cruise={};
+    out = document.getElementById("result");
+    function selectCruise(){
+        my_cruise={};
+        Cabin = document.getElementById("Cabin").checked;
+        Breakfast = document.getElementById("Breakfast").checked;
+        Pass = document.getElementById("Pass").checked;
+        my_cruise["Cabin"] = Cabin;
+        my_cruise["Breakfast"] = Breakfast;
+        my_cruise["Pass"] = Pass;
+        out.innerHTML =
+            "Shares Cabin: " + my_cruise.Cabin + "<br> Breakfast: " + my_cruise.Breakfast + "<br>Pool Pass: " + my_cruise.Pass;
+    }
+</script>
+</body>
+</html> 
