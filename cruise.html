@@ -43,15 +43,17 @@
         my_cruise["Breakfast"] = Breakfast;
         my_cruise["Pass"] = Pass;
         out.innerHTML =
-            "Shares Cabin: " + my_cruise.Cabin + "<br> Breakfast: " + my_cruise.Breakfast + "<br>Pool Pass: " + my_cruise.Pass;
+            "Shares Cabin: " + my_cruise.Cabin + "<br> Breakfast: " + my_cruise.Breakfast + "<br>Pool Pass: "
+             + my_cruise.Pass;
     }
     function updateCruise(){
         days = document.getElementById("days").value;
         price = document.getElementById("price").value;
         my_cruise["days"] = days;
         my_cruise["price"] = price;
-        out.innerHTML =
-            "days: " + my_cruise.days + "<br> price: " + my_cruise.price ;
+        out.innerHTML = 
+        "Shares Cabin: " + my_cruise.Cabin + "<br> Breakfast: " + my_cruise.Breakfast + 
+        "<br>Pool Pass: " + my_cruise.Pass+"<br>days: " + my_cruise.days + "<br> price: " + my_cruise.price ;
     }
 </script>
 </body>
